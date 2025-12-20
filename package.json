@@ -29,7 +29,7 @@
     "openapi-fetch": "^0.15.0"
   },
   "devDependencies": {
-    "@figma/rest-api-spec": "^0.35.0",
+    "@figma/rest-api-spec": "0.35.0",
     "bumpp": "^10.3.2",
     "openapi-typescript": "^7.10.1",
     "prettier": "^3.7.4",
