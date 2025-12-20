@@ -68,11 +68,7 @@ jobs:
       - if: ${{ !contains(steps.extract-version.outputs.version, '-') }}
         name: Publish package
         run: pnpm publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
       - if: ${{ contains(steps.extract-version.outputs.version, '-') }}
         name: Publish canary package
         run: pnpm publish --access public --tag next --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
