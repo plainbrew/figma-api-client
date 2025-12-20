@@ -18,6 +18,8 @@
   "devDependencies": {
     "@figma/rest-api-spec": "^0.35.0",
     "openapi-typescript": "^7.10.1",
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "^5.9.3"
   }
 }
