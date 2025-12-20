@@ -84,3 +84,33 @@ pnpm run generate:schema
 ```bash
 pnpm run build
 ```
+
+## リリース
+
+このプロジェクトは GitHub Actions による自動化されたリリースフローを使用しています。
+
+### リリース手順
+
+1. **リリース PR の作成**
+   - [Create Release PR ワークフロー](https://github.com/plainbrew/figma-api-client/actions/workflows/create-release-pr.yml)を手動実行
+   - リリースするバージョンタイプを選択:
+     - `major`: メジャーバージョンアップ (例: 1.0.0 → 2.0.0)
+     - `minor`: マイナーバージョンアップ (例: 1.0.0 → 1.1.0)
+     - `patch`: パッチバージョンアップ (例: 1.0.0 → 1.0.1)
+     - `premajor`, `preminor`, `prepatch`, `prerelease`: プレリリース版
+   - ワークフローが自動的にバージョンを更新し、`release-vX.X.X` ブランチと PR を作成
+
+2. **リリースの実行**
+   - 作成されたリリース PR をレビュー
+   - PR をマージすると、自動的に以下が実行されます:
+     - Git タグの作成 (`vX.X.X`)
+     - GitHub Release の作成
+     - パッケージのビルドと npm への公開
+       - 通常バージョン: `latest` タグで公開
+       - プレリリース版 (バージョンに `-` を含む): `next` タグで公開
+
+### プレリリース版のインストール
+
+```bash
+npm install @plainbrew/figma-api-client@next
+```
