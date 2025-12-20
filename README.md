@@ -84,7 +84,3 @@ pnpm run generate:schema
 ```bash
 pnpm run build
 ```
-
-## ライセンス
-
-MIT
