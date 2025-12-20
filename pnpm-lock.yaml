@@ -13,7 +13,7 @@ importers:
         version: 0.15.0
     devDependencies:
       '@figma/rest-api-spec':
-        specifier: ^0.35.0
+        specifier: 0.35.0
         version: 0.35.0
       bumpp:
         specifier: ^10.3.2
