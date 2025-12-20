@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    if: github.event.pull_request.merged && contains(github.event.pull_request.labels.*.name, 'release')
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [24]
+    steps:
+      - name: Checkout
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ env.BASE_REF }}
+
+      - name: Set up Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Extract version
+        id: extract-version
+        run: |
+          echo "version=$(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Create tag
+        env:
+          VERSION: ${{ steps.extract-version.outputs.version }}
+        run: |
+          git tag "v$VERSION"
+          git push origin --tags
+
+      - name: Create Release Notes
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.extract-version.outputs.version }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        run: pnpm run build
+
+      - if: ${{ !contains(steps.extract-version.outputs.version, '-') }}
+        name: Publish package
+        run: pnpm publish --access public --no-git-checks
+
+      - if: ${{ contains(steps.extract-version.outputs.version, '-') }}
+        name: Publish canary package
+        run: pnpm publish --access public --tag next --no-git-checks

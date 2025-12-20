@@ -1,8 +1,15 @@
 {
   "name": "@plainbrew/figma-api-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc --build",
     "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
@@ -18,6 +25,7 @@
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.35.0",
+    "bumpp": "^10.3.2",
     "openapi-typescript": "^7.10.1",
     "prettier": "^3.7.4",
     "prettier-plugin-organize-imports": "^4.3.0",

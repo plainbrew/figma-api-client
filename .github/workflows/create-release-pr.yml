@@ -1,0 +1,84 @@
+name: Create Release PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Select the version for the release"
+        required: true
+        type: "choice"
+        options:
+          - major
+          - minor
+          - patch
+          - premajor
+          - preminor
+          - prepatch
+          - prerelease
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [24]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Set up Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Increment version
+        env:
+          VERSION_TYPE: ${{ github.event.inputs.version }}
+        run: pnpm exec bumpp --no-commit --no-tag --no-push --yes "$VERSION_TYPE"
+
+      - name: Extract version
+        id: extract-version
+        run: |
+          echo "version=$(node -p -e "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Git commit
+        env:
+          VERSION: ${{ steps.extract-version.outputs.version }}
+        run: |
+          git add .
+          git commit -m "v$VERSION"
+
+      - name: Checkout and Push
+        env:
+          VERSION: ${{ steps.extract-version.outputs.version }}
+        run: |
+          git checkout -b "release-v$VERSION"
+          git push origin "HEAD:release-v$VERSION"
+
+      - name: Create release PR
+        env:
+          VERSION: ${{ steps.extract-version.outputs.version }}
+          BASE_REF: ${{ github.ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "Release v$VERSION" \
+            --body "This is an automated release PR" \
+            --base "$BASE_REF" \
+            --label "release"
