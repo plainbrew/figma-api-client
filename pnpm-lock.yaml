@@ -6,4 +6,17 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@figma/rest-api-spec':
+        specifier: ^0.35.0
+        version: 0.35.0
+
+packages:
+
+  '@figma/rest-api-spec@0.35.0':
+    resolution: {integrity: sha512-0v/KJmCWzKBp/wmsqjOas7tLauD1s0nrJJ70vzOCqEEgNrZvugi6/Myssfy+BsfpU5bcC66KrgApqoRRnsbJ4Q==}
+
+snapshots:
+
+  '@figma/rest-api-spec@0.35.0': {}
