@@ -92,7 +92,7 @@ pnpm run build
 ### リリース手順
 
 1. **リリース PR の作成**
-   - GitHub の Actions タブから「Create Release PR」ワークフローを手動実行
+   - [Create Release PR ワークフロー](https://github.com/plainbrew/figma-api-client/actions/workflows/create-release-pr.yml)を手動実行
    - リリースするバージョンタイプを選択:
      - `major`: メジャーバージョンアップ (例: 1.0.0 → 2.0.0)
      - `minor`: マイナーバージョンアップ (例: 1.0.0 → 1.1.0)
