@@ -1,0 +1,26 @@
+{
+  "name": "@plainbrew/figma-api-client",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
+    "format": "prettier --write .",
+    "prepare": "pnpm run generate:schema"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "openapi-fetch": "^0.15.0"
+  },
+  "devDependencies": {
+    "@figma/rest-api-spec": "^0.35.0",
+    "openapi-typescript": "^7.10.1",
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "^5.9.3"
+  }
+}
