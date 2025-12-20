@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.35.0",
+    "bumpp": "^10.3.2",
     "openapi-typescript": "^7.10.1",
     "prettier": "^3.7.4",
     "prettier-plugin-organize-imports": "^4.3.0",
