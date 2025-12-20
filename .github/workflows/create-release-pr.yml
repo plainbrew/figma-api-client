@@ -71,6 +71,12 @@ jobs:
           git checkout -b "release-v$VERSION"
           git push origin "HEAD:release-v$VERSION"
 
+      - name: Ensure release label exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create release --color "F23DEF" --description "Release PR" --force
+
       - name: Create release PR
         env:
           VERSION: ${{ steps.extract-version.outputs.version }}
