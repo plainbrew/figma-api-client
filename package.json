@@ -5,8 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc --build",
-    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
+    "prepare": "pnpm run generate:schema"
   },
   "keywords": [],
   "author": "",
