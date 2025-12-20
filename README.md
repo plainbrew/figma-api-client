@@ -1,4 +1,4 @@
-# figma-api-client
+# @plainbrew/figma-api-client
 
 Figma REST API の TypeScript クライアントライブラリです。[openapi-fetch](https://openapi-ts.dev/openapi-fetch/) ベースで型安全な API クライアントを提供します。
 
