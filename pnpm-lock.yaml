@@ -30,12 +30,6 @@ importers:
       oxfmt:
         specifier: ^0.27.0
         version: 0.27.0
-      prettier:
-        specifier: ^3.7.4
-        version: 3.7.4
-      prettier-plugin-organize-imports:
-        specifier: ^4.3.0
-        version: 4.3.0(prettier@3.7.4)(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -399,21 +393,6 @@ packages:
   pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
-
-  prettier-plugin-organize-imports@4.3.0:
-    resolution: {integrity: sha512-FxFz0qFhyBsGdIsb697f/EkvHzi5SZOhWAjxcx2dLt+Q532bAlhswcXGYB1yzjZ69kW8UoadFBw7TyNwlq96Iw==}
-    peerDependencies:
-      prettier: '>=2.0'
-      typescript: '>=2.9'
-      vue-tsc: ^2.1.0 || 3
-    peerDependenciesMeta:
-      vue-tsc:
-        optional: true
-
-  prettier@3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   rc9@2.1.2:
     resolution: {integrity: sha512-btXCnMmRIBINM2LDZoEmOogIZU7Qe7zn4BpomSKZ/ykbLObuBdvG+mFq11DL6fjH1DRwHhrlgtYWG96bJiC7Cg==}
@@ -846,13 +825,6 @@ snapshots:
       pathe: 2.0.3
 
   pluralize@8.0.0: {}
-
-  prettier-plugin-organize-imports@4.3.0(prettier@3.7.4)(typescript@5.9.3):
-    dependencies:
-      prettier: 3.7.4
-      typescript: 5.9.3
-
-  prettier@3.7.4: {}
 
   rc9@2.1.2:
     dependencies:
