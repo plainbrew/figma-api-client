@@ -22,7 +22,7 @@
     "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "prepare": "pnpm run generate:schema"
+    "prepare": "husky && pnpm run generate:schema"
   },
   "dependencies": {
     "openapi-fetch": "^0.15.0"
