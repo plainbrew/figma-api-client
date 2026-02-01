@@ -1,4 +1,5 @@
 import createClientOriginal from "openapi-fetch";
+
 import type { components, paths } from "./schema";
 
 type CreateClientOptions = {
