@@ -13,8 +13,8 @@
   "scripts": {
     "build": "tsc --build",
     "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "prepare": "pnpm run generate:schema"
   },
   "keywords": [],
