@@ -2,38 +2,39 @@
   "name": "@plainbrew/figma-api-client",
   "version": "0.1.2",
   "description": "",
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "./dist/index.js",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "build": "tsc --build",
-    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "prepare": "pnpm run generate:schema"
-  },
   "keywords": [],
-  "author": "",
   "license": "MIT",
+  "author": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/plainbrew/figma-api-client"
   },
-  "packageManager": "pnpm@10.24.0",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "prepare": "husky && pnpm run generate:schema"
+  },
   "dependencies": {
     "openapi-fetch": "^0.15.0"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "0.36.0",
     "bumpp": "^10.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "openapi-typescript": "^7.10.1",
-    "prettier": "^3.7.4",
-    "prettier-plugin-organize-imports": "^4.3.0",
+    "oxfmt": "^0.27.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "packageManager": "pnpm@10.24.0"
 }
