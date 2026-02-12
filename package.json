@@ -25,7 +25,7 @@
     "prepare": "husky && pnpm run generate:schema"
   },
   "dependencies": {
-    "openapi-fetch": "^0.15.0"
+    "openapi-fetch": "^0.17.0"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "0.36.0",
