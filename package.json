@@ -8,7 +8,7 @@
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm -r run release",
-    "prepare": "husky --filter @plainbrew/figma-api-client && pnpm run generate:schema"
+    "prepare": "husky && pnpm --filter @plainbrew/figma-api-client run generate:schema"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
