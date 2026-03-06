@@ -18,5 +18,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "release": "pnpm publish"
   }
 }
