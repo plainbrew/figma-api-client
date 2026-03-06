@@ -2,5 +2,3 @@
 node_modules
 tsconfig.tsbuildinfo
 dist
-packages/figma-api-client/src/schema/*
-!packages/figma-api-client/src/schema/.gitkeep
