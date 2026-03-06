@@ -1,5 +1,11 @@
 # @plainbrew/figma-api-client
 
+## 0.4.1
+
+### Patch Changes
+
+- [#45](https://github.com/plainbrew/figma-api-client/pull/45) [`3f3f230`](https://github.com/plainbrew/figma-api-client/commit/3f3f230a4c94962946591c62849101294d33f98e) Thanks [@amotarao](https://github.com/amotarao)! - @plainbrew/figma-rest-api-spec を devDependencies から dependencies に変更し、versioning 調整
+
 ## 0.4.0
 
 ### Minor Changes
