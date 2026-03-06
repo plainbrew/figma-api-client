@@ -1,0 +1,4 @@
+---
+---
+
+Setup `@changesets/changelog-github`
