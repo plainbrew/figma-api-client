@@ -24,7 +24,6 @@
     "format:check": "oxfmt --check",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm run build && pnpm publish",
     "prepare": "husky && pnpm run generate:schema"
   },
   "dependencies": {
