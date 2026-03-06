@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      openapi-fetch:
-        specifier: ^0.17.0
-        version: 0.17.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.30.0
@@ -18,21 +14,28 @@ importers:
       '@changesets/config':
         specifier: ^3.1.3
         version: 3.1.3
-      '@figma/rest-api-spec':
-        specifier: 0.36.0
-        version: 0.36.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
       lint-staged:
         specifier: ^16.2.7
         version: 16.3.2
-      openapi-typescript:
-        specifier: ^7.10.1
-        version: 7.13.0(typescript@5.9.3)
       oxfmt:
         specifier: ^0.36.0
         version: 0.36.0
+
+  packages/figma-api-client:
+    dependencies:
+      openapi-fetch:
+        specifier: ^0.17.0
+        version: 0.17.0
+    devDependencies:
+      '@figma/rest-api-spec':
+        specifier: 0.36.0
+        version: 0.36.0
+      openapi-typescript:
+        specifier: ^7.10.1
+        version: 7.13.0(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
