@@ -9,7 +9,8 @@
     "directory": "packages/figma-rest-api-spec"
   },
   "files": [
-    "openapi"
+    "openapi",
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public"
