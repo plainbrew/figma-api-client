@@ -1,0 +1,17 @@
+{
+  "name": "@plainbrew/figma-rest-api-spec",
+  "version": "0.0.0",
+  "description": "OpenAPI specification for the Figma REST API",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plainbrew/figma-api-client",
+    "directory": "packages/figma-rest-api-spec"
+  },
+  "files": [
+    "openapi"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
