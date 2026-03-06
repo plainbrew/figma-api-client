@@ -1,5 +1,11 @@
 # @plainbrew/figma-rest-api-spec
 
+## 0.1.1
+
+### Patch Changes
+
+- [#42](https://github.com/plainbrew/figma-api-client/pull/42) [`b9d955a`](https://github.com/plainbrew/figma-api-client/commit/b9d955a1660ce559526e75bb2d9e5c2965504d1d) Thanks [@amotarao](https://github.com/amotarao)! - release script 漏れを修正
+
 ## 0.1.0
 
 ### Minor Changes
