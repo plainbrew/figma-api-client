@@ -9,10 +9,13 @@
     "directory": "packages/figma-rest-api-spec"
   },
   "files": [
-    "openapi",
+    "openapi.yaml",
     "LICENSE",
     "README.md"
   ],
+  "exports": {
+    "./openapi.yaml": "./openapi.yaml"
+  },
   "publishConfig": {
     "access": "public"
   }
