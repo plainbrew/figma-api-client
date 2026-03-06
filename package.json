@@ -1,44 +1,22 @@
 {
-  "name": "@plainbrew/figma-api-client",
-  "version": "0.2.0",
-  "description": "",
-  "keywords": [],
-  "license": "MIT",
-  "author": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/plainbrew/figma-api-client"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "main": "./dist/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "figma-api-client",
+  "private": true,
   "scripts": {
-    "build": "tsc --build",
-    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
+    "build": "pnpm -r run build",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
+    "generate:schema": "pnpm --filter @plainbrew/figma-api-client run generate:schema",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "pnpm run build && pnpm publish",
-    "prepare": "husky && pnpm run generate:schema"
-  },
-  "dependencies": {
-    "openapi-fetch": "^0.17.0"
+    "release": "pnpm -r run release",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^2.30.0",
     "@changesets/config": "^3.1.3",
-    "@figma/rest-api-spec": "0.36.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "openapi-typescript": "^7.10.1",
-    "oxfmt": "^0.36.0",
-    "typescript": "^5.9.3"
+    "oxfmt": "^0.36.0"
   },
   "packageManager": "pnpm@10.24.0"
 }
