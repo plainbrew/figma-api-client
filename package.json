@@ -22,14 +22,17 @@
     "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm run build && pnpm publish",
     "prepare": "husky && pnpm run generate:schema"
   },
   "dependencies": {
     "openapi-fetch": "^0.17.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "@figma/rest-api-spec": "0.36.0",
-    "bumpp": "^10.3.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "openapi-typescript": "^7.10.1",
