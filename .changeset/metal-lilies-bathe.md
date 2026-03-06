@@ -1,4 +1,5 @@
 ---
+"@plainbrew/figma-api-client": patch
 ---
 
-`@changesets/changelog-github` をセットアップし、CHANGELOG に GitHub の PR リンクとコントリビューター情報が含まれるようにした
+Setup `@changesets/changelog-github`
