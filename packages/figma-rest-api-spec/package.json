@@ -10,7 +10,8 @@
   },
   "files": [
     "openapi",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
