@@ -29,13 +29,13 @@ importers:
 
   packages/figma-api-client:
     dependencies:
+      '@plainbrew/figma-rest-api-spec':
+        specifier: workspace:*
+        version: link:../figma-rest-api-spec
       openapi-fetch:
         specifier: ^0.17.0
         version: 0.17.0
     devDependencies:
-      '@plainbrew/figma-rest-api-spec':
-        specifier: workspace:*
-        version: link:../figma-rest-api-spec
       openapi-typescript:
         specifier: ^7.10.1
         version: 7.13.0(typescript@5.9.3)

@@ -24,10 +24,10 @@
     "release": "pnpm run build && pnpm publish"
   },
   "dependencies": {
+    "@plainbrew/figma-rest-api-spec": "workspace:*",
     "openapi-fetch": "^0.17.0"
   },
   "devDependencies": {
-    "@plainbrew/figma-rest-api-spec": "workspace:*",
     "openapi-typescript": "^7.10.1",
     "typescript": "^5.9.3"
   }
