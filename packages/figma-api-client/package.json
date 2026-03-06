@@ -20,14 +20,14 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "generate:schema": "openapi-typescript ./node_modules/@figma/rest-api-spec/openapi/openapi.yaml -o ./src/schema/index.ts",
+    "generate:schema": "openapi-typescript ./node_modules/@plainbrew/figma-rest-api-spec/openapi.yaml -o ./src/schema/index.ts",
     "release": "pnpm run build && pnpm publish"
   },
   "dependencies": {
     "openapi-fetch": "^0.17.0"
   },
   "devDependencies": {
-    "@figma/rest-api-spec": "0.36.0",
+    "@plainbrew/figma-rest-api-spec": "workspace:*",
     "openapi-typescript": "^7.10.1",
     "typescript": "^5.9.3"
   }
