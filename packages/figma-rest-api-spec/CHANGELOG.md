@@ -1,5 +1,11 @@
 # @plainbrew/figma-rest-api-spec
 
+## 0.2.0
+
+### Minor Changes
+
+- [#46](https://github.com/plainbrew/figma-api-client/pull/46) [`71fcd48`](https://github.com/plainbrew/figma-api-client/commit/71fcd480982e532f384b670a1f9c185fc5082ab6) Thanks [@amotarao](https://github.com/amotarao)! - ComponentPropertyDefinition / ComponentProperty を type 別スキーマに分割
+
 ## 0.1.1
 
 ### Patch Changes
