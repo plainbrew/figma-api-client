@@ -21,7 +21,8 @@
   "scripts": {
     "build": "tsc --build",
     "generate:schema": "openapi-typescript ./node_modules/@plainbrew/figma-rest-api-spec/openapi.yaml -o ./src/schema/index.ts",
-    "release": "pnpm run build && pnpm publish"
+    "release": "pnpm run build && pnpm publish",
+    "prepare": "pnpm run generate:schema"
   },
   "dependencies": {
     "@plainbrew/figma-rest-api-spec": "workspace:*",
